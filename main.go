@@ -6,5 +6,7 @@ import (
 )
 
 func main() {
-	log.Fatal(http.ListenAndServe(":1880", nil))
+	s := server.New()
+
+	log.Fatal(http.ListenAndServe(":1880", s.Router()))
 }
